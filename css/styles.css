@@ -154,6 +154,12 @@ header {
 .header-contacts .item:not(:last-child) {
   margin-right: 50px;
 }
+
+.mail-icon,
+.phone-icon {
+  margin-right: 10px;
+}
+
 /*=======ГЕРОЙ======*/
 
 .hero {

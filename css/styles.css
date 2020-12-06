@@ -7,7 +7,8 @@
 
 /* основной белый #FFFFFF  */
 /* вторичный цвет фона #F5F4FA */
-/* фон акцент #2F303A */
+/* фон акцент #2F303A 
+цвет иконок социальных сетей #AFB1B8 */
 
 /*========ОСНОВНЫЕ=========*/
 
@@ -21,6 +22,7 @@
   --main-white: #ffffff;
   --sub-background: #f5f4fa;
   --accent-background: #2f303a;
+  --social-links: #afb1b8;
 }
 
 html {
@@ -75,6 +77,17 @@ h2 {
 h3 {
   color: var(--title-text-color);
   line-height: 1.14;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
 
 /*СТРАНИЦА "СТУДИЯ"
@@ -158,8 +171,21 @@ header {
 .mail-icon,
 .phone-icon {
   margin-right: 10px;
+  fill: var(--primary-text-color);
 }
 
+.address-link:hover .mail-icon,
+.address-link:focus .mail-icon,
+.address-link:hover .phone-icon,
+.address-link:focus .phone-icon {
+  fill: var(--accent-text-color);
+}
+
+.address-link {
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
 /*=======ГЕРОЙ======*/
 
 .hero {
@@ -168,8 +194,21 @@ header {
   padding-top: 200px;
   padding-bottom: 280px;
   text-align: center;
-  background-color: var(--accent-background);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero/bg-image.jpg);
+  background-color: rgba(47, 48, 58, 0.4);
+
+  background-repeat: no-repeat;
   border: none;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+  background-size: cover;
+  max-width: 1600;
 }
 
 .hero .container {
@@ -241,6 +280,18 @@ inherited from .page and .h3  */
   padding-right: 30px;
 }
 
+.principles-image {
+  display: block;
+  width: 270px;
+  height: 120px;
+  background-color: var(--sub-background);
+  margin-bottom: 30px;
+  padding-left: 100px;
+  padding-top: 25px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+}
+
 /*========Чем мы занимаемся======*/
 .what-we-do {
   padding-bottom: 94px;
@@ -288,7 +339,7 @@ font styles are inherited from .page and .h3  */
 }
 
 .our-team-item {
-  height: 368px;
+  height: 428px;
   padding-bottom: 30px;
   background-color: var(--main-white);
   border-radius: 0px 0px 4px 4px;
@@ -315,6 +366,42 @@ font styles are inherited from .page and .h3  */
 
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 16px;
+}
+
+.team-social-links {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  fill: var(--social-links);
+}
+
+.social-link {
+  display: block;
+  background-color: var(--main-white);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+}
+
+.social-link-list:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-text-color);
+}
+
+.social-link:hover .icon,
+.social-link:focus .icon {
+  fill: var(--main-white);
 }
 
 /*=========ФУТЕР===========*/
